@@ -1,0 +1,103 @@
+
+.services-section {
+  padding: 5rem 2rem;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  text-align: center;
+    font-family: 'Fraunces', serif;
+  
+}
+
+.services-header h2 {
+  font-size: 5rem;
+  margin-bottom: 0.5rem;
+    /* background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; */
+
+
+  /* Apply gradient to background instead of color */
+  /* background: 
+    radial-gradient(ellipse 90% 55% at 50% 55%, rgba(95, 54, 221, 0.22) 0%, transparent 100%),
+    radial-gradient(ellipse 95% 25% at 50% 100%, rgba(251, 249, 255, 0.12) 0%, transparent 100%);
+  /* Clip the background to text 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;*/ 
+ 
+}
+
+.services-header p {
+  font-size: 1rem;
+  color: #b0b0b0;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.service-card {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  flex: 1 1 300px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #6c63ff; 
+}
+
+.service-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  
+}
+
+.service-desc {
+  font-size: 0.95rem;
+  color: #b0b0b0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.learn-more {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.learn-more:hover {
+  background-color: #5750d3;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .services-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+.services-header h2 {
+font-size: 2.5rem !important;}
+
+}

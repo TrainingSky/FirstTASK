@@ -33,7 +33,7 @@ const Navbar = () => {
 
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            {['/', '/services', '/work', '/process', '/about', '/careers'].map((path, index) => {
+            {['/', '/services', '/work',  '/about', '/ContactPage'].map((path, index) => {
               const name = path === '/' ? 'Home' : path.slice(1).charAt(0).toUpperCase() + path.slice(2);
               return (
                 <li className="nav-item" key={path}>

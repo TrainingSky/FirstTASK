@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=Figtree:wght@300;400;500&display=swap');
+
+:root {
+  --bg: #0c0c0e;
+  --bg-2: #111114;
+  --text-primary: #f0eeea;
+  --text-muted: #6b6b78;
+  --text-dim: #3e3e48;
+  --accent: #5b2eff;
+  --accent-hover: #7246ff;
+  --border: rgba(255,255,255,0.08);
+  --border-tag: rgba(255,255,255,0.12);
+  --pill-bg: rgba(255,255,255,0.04);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.hero-wrapper {
+  background: var(--bg);
+  font-family: 'Fraunces', serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Mountain / wave SVG backdrop ── */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-bg-radial {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 55%, rgba(60, 20, 180, 0.22) 0%, transparent 70%),
+    radial-gradient(ellipse 35% 25% at 50% 100%, rgba(91, 46, 255, 0.12) 0%, transparent 60%);
+}
+
+.hero-mountain {
+  position: absolute;
+  bottom: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 900px;
+}
+
+/* ── Main content ── */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 120px 24px 40px;
+  flex: 1;
+}
+
+/* Headline */
+.hero-title {
+    font-family: 'Fraunces', serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  max-width: 700px;
+  margin-bottom: 32px;
+  animation: heroFade 0.7s ease both;
+}
+
+/* Tag row */
+.hero-tags {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+  animation: heroFade 0.7s 0.12s ease both;
+}
+
+.hero-tag {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-primary);
+  background: var(--pill-bg);
+  border: 1px solid var(--border-tag);
+  padding: 7px 18px;
+  border-radius: 6px;
+  letter-spacing: 0.01em;
+}
+
+.hero-tag-dot {
+  font-size: 18px;
+  color: var(--text-dim);
+  padding: 0 6px;
+  user-select: none;
+}
+
+.hero-tag-and {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: 0 10px;
+  font-style: italic;
+}
+
+.hero-tag-accent {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: var(--pill-bg);
+  border: 1px solid var(--border-tag);
+  padding: 7px 18px;
+  border-radius: 6px;
+  letter-spacing: 0.01em;
+}
+
+/* CTA buttons */
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: heroFade 0.7s 0.22s ease both;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-family: 'Fraunces', serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.22s ease;
+  border: none;
+}
+
+.hero-btn-outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.hero-btn-outline:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.hero-btn-solid {
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.hero-btn-solid:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(91, 46, 255, 0.4);
+}
+
+/* ── Trust bar ── */
+.hero-trust-wrapper {
+  position: relative;
+  z-index: 1;
+  padding: 28px 24px 0;
+  text-align: center;
+  animation: heroFade 0.7s 0.32s ease both;
+}
+
+.hero-trust-label {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+/* ── Logo strip ── */
+.hero-logos {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 28px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  animation: heroFade 0.7s 0.42s ease both;
+}
+
+.hero-logo-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.45;
+  transition: opacity 0.25s;
+  cursor: default;
+  user-select: none;
+}
+
+.hero-logo-item:hover {
+  opacity: 0.85;
+}
+
+.hero-logo-icon {
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+}
+
+.hero-logo-name {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+/* ── Animation ── */
+@keyframes heroFade {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .hero-content { padding-top: 80px; }
+  .hero-logos { justify-content: center; padding: 24px; }
+  .hero-tags { gap: 6px; }
+  .hero-tag-dot { display: none; }
+  .hero-title{font-size: 2.5rem ; padding-top: 30px;}
+  
+}
