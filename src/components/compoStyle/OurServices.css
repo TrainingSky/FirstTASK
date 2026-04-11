@@ -97,7 +97,99 @@
     flex-direction: column;
     align-items: center;
   }
-.services-header h2 {
-font-size: 2.5rem !important;}
 
+  .services-header h2 {
+    font-size: 2.5rem !important;
+  }
+
+  .service-card {
+    width: 100%;
+    max-width: 100%;        /* ← fix overflow */
+    box-sizing: border-box; /* ← fix padding issues */
+  }
+
+  .services-section {
+    padding: 3rem 1rem;     /* ← less side padding on mobile */
+  }
+}
+
+
+
+.service-card {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  flex: 1 1 300px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* ✅ pushes button to bottom */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-desc {
+  font-size: 0.95rem;
+  color: #b0b0b0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  flex-grow: 1; /* ✅ takes up remaining space above button */
+}
+
+
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ✅ always exactly 3 columns */
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 320px;        /* ✅ consistent card height */
+  overflow: hidden;         /* ✅ stops text from bleeding out */
+}
+
+.service-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  word-break: break-word;   /* ✅ wraps long titles */
+  text-align: center;
+}
+
+.service-desc {
+  font-size: 0.95rem;
+  color: #b0b0b0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  flex-grow: 1;
+  word-break: break-word;   /* ✅ wraps long descriptions */
+  overflow-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;    /* ✅ max 4 lines, keeps cards uniform */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr; /* ✅ single column on mobile */
+  }
+
+  .services-header h2 {
+    font-size: 2.5rem !important;
+  }
+
+  .services-section {
+    padding: 3rem 1rem;
+  }
 }

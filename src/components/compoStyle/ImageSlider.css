@@ -133,3 +133,18 @@
         min-height: auto; 
     }
 }
+
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 300px;          /* ✅ fixed height, no aspect-ratio */
+    background-color: #111;
+    overflow: hidden;
+    border-radius: 22px;
+    border: 4px solid #fff;
+    box-shadow:
+        6px 6px 0 #000,
+        12px 12px 0 #6c63ff;
+    margin: 0 auto;
+}
