@@ -24,6 +24,8 @@ const ContactPage = () => {
   };
 
   const handleSubmit = async () => {
+
+const apiUrl = import.meta.env.VITE_API_URL;
     if (!formData.fullName || !formData.email || !formData.message) {
       setStatus("Please fill in all required fields.");
       return;
@@ -31,7 +33,7 @@ const ContactPage = () => {
 
     try {
       setLoading(true);
-      const res = await fetch("https://skyfall-backend-1.onrender.com/api/contacts", {
+      const res = await fetch(`${apiUrl}/contacts`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

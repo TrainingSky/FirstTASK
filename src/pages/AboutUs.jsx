@@ -41,7 +41,7 @@ const AboutUs = () => {
 
 
 
-      {/* STORY SECTION */}
+  
       <section className="story-section">
         <h2 className="section-title">Our Story</h2>
 
@@ -50,7 +50,7 @@ const AboutUs = () => {
         ))}
       </section>
 
-      {/* FOUNDER SECTION */}
+
       <section className="founder-section">
         <h2 className="section-title">Founder & CEO</h2>
 

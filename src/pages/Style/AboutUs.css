@@ -223,13 +223,14 @@ color:white;
 .about-background-text {
 
 
-  font-size: 6rem;
+  font-size: 4.5rem;
+  
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.05); 
+  color: rgb(255, 255, 255); 
 
    background: 
-    radial-gradient(ellipse 90% 55% at 50% 55%, rgba(95, 54, 221, 0.22) 0%, transparent 100%),
-    radial-gradient(ellipse 95% 25% at 50% 100%, rgba(251, 249, 255, 0.12) 0%, transparent 100%);
+    radial-gradient(ellipse 90% 95% at 20% 55%, rgba(154, 121, 252, 0.22) 0%, transparent 100%),
+    radial-gradient(ellipse 95% 75% at 60% 90%, rgba(255, 255, 255, 0.12) 0%, transparent 100%);
  
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
@@ -240,6 +241,10 @@ color:white;
   user-select: none;
   text-transform: uppercase;
   letter-spacing: 4px;
+   justify-self: center;
+
+ 
+  padding: 0px;
 
 
 }

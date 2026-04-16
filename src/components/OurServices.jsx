@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { FaPaintBrush, FaPuzzlePiece, FaTasks } from "react-icons/fa";
 import "./compoStyle/OurServices.css";
 
-// map icon string from DB to actual component
 const iconMap = {
   FaPaintBrush: <FaPaintBrush />,
   FaPuzzlePiece: <FaPuzzlePiece />,
@@ -21,7 +20,8 @@ const OurServices = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("https://skyfall-backend-1.onrender.com/api/services")
+const apiUrl = import.meta.env.VITE_API_URL;
+    fetch(`${apiUrl}/services`)
       .then((res) => res.json())
       .then((data) => setServices(data))
       .catch((err) => console.error(err));

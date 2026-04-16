@@ -39,7 +39,8 @@ export default function WallOfSuccess() {
   const autoplayRef = useRef(null);
 
   useEffect(() => {
-    fetch("https://skyfall-backend-1.onrender.com/api/testimonials")
+     const apiUrl = import.meta.env.VITE_API_URL;
+    fetch(`${apiUrl}/testimonials`)
       .then(r => r.json())
       .then(d => setTestimonials(Array.isArray(d) ? d : d.testimonials || []))
       .catch(() => {});
