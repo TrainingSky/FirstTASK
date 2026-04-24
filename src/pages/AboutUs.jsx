@@ -1,6 +1,6 @@
 import React from "react";
 import "./Style/AboutUs.css";
-import img from "../assets/images/image-removebg-preview.png"
+import img from "../assets/images/image-removebg-preview.png";
 
 const AboutUs = () => {
   const aboutParagraphs = [
@@ -8,48 +8,42 @@ const AboutUs = () => {
   ];
 
   const storyParagraphs = [
-    "Skyfall Enterprises is a data-driven software development company dedicated to empowering businesses with intelligent solutions. By seamlessly integrating software services with advanced data tracking, we provide in-depth, data-driven reporting that enables businesses to make informed and strategic decisions. Our expertise lies in transforming raw data into actionable insights, helping companies optimize their operations, enhance performance, and drive sustainable growth. At Skyfall Enterprises, we bridge the gap between technology and business intelligence, ensuring that every decision is backed by accurate and meaningful d"
+    "Skyfall Enterprises is a data-driven software development company dedicated to empowering businesses with intelligent solutions. By seamlessly integrating software services with advanced data tracking, we provide in-depth, data-driven reporting that enables businesses to make informed and strategic decisions. Our expertise lies in transforming raw data into actionable insights, helping companies optimize their operations, enhance performance, and drive sustainable growth. At Skyfall Enterprises, we bridge the gap between technology and business intelligence, ensuring that every decision is backed by accurate and meaningful data."
   ];
 
   const founderData = {
     name: "Ahmad Al Njada",
     bio: [
-      "With a bachelors’ in Computer Science, and experience in Business Intelligence. Ahmad Founded Skyfall Enterprises to empower businesses and implement software needs through data-driven approach. And a part of being a tech - founder he also Co - Founded Weqayah(a product under the umbrella of Skyfall). Also, training people and companies is a big part of Ahmad’s journey to ensure that people has the knowledge needed."
+      "With a bachelors’ in Computer Science, and experience in Business Intelligence, Ahmad founded Skyfall Enterprises to empower businesses through a data-driven approach. Alongside being a tech founder, he also co-founded Weqayah (a product under Skyfall). Training individuals and companies is a key part of his journey, ensuring they gain the knowledge needed to succeed."
     ],
-    image: "/founder.jpg"
+    image: img
   };
 
   return (
     <div className="about-container">
-   
+      
       <section className="about-hero">
         <h1>About Us</h1>
         <p>Welcome to Skyfall, where data is the driver of your success.</p>
       </section>
 
-    
       <section className="about-content">
- 
-  <div className="about-background-text">Skyfall Enterprises</div>
+        <div className="about-background-text">Skyfall Enterprises</div>
 
-  <div className="about-text">
-    {aboutParagraphs.map((para, index) => (
-      <p key={index}>{para}</p>
-    ))}
-  </div>
-</section>
+        <div className="about-text">
+          {aboutParagraphs.map((para) => (
+            <p key={para}>{para}</p> 
+          ))}
+        </div>
+      </section>
 
-
-
-  
       <section className="story-section">
         <h2 className="section-title">Our Story</h2>
 
-        {storyParagraphs.map((para, index) => (
-          <p key={index}>{para}</p>
+        {storyParagraphs.map((para) => (
+          <p key={para}>{para}</p>  
         ))}
       </section>
-
 
       <section className="founder-section">
         <h2 className="section-title">Founder & CEO</h2>
@@ -58,13 +52,13 @@ const AboutUs = () => {
           <div className="founder-text">
             <h3>{founderData.name}</h3>
 
-            {founderData.bio.map((line, index) => (
-              <p key={index}>{line}</p>
+            {founderData.bio.map((line) => (
+              <p key={line}>{line}</p> 
             ))}
           </div>
 
           <div className="founder-image">
-            <img src={img} alt="Founder" />
+            <img src={founderData.image} alt={founderData.name} />
           </div>
         </div>
       </section>

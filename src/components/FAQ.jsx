@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 const faqs = [
   { id: 1, question: "What services does SquareUp provide?", answer: "SquareUp offers design, engineering, and product strategy services tailored for scalable businesses." },
@@ -9,7 +10,7 @@ const faqs = [
   { id: 6, question: "Can you work with existing frameworks?", answer: "Absolutely. We adapt to your existing tech stack when possible." }
 ];
 
-const FAQ = () => {
+const FAQ = ({ faqsData = faqs }) => {
   const [openItem, setOpenItem] = useState(null); 
 
   const toggleFAQ = (id) => {
@@ -20,7 +21,7 @@ const FAQ = () => {
     <section className="faq-section">
       <h2>Frequently Asked Questions</h2>
       <div className="faq-grid">
-        {faqs.map(faq => (
+        {faqsData.map(faq => (
           <div key={faq.id} className={`faq-item ${openItem === faq.id ? "active" : ""}`}>
             <div className="faq-header" onClick={() => toggleFAQ(faq.id)}>
               <span className="faq-number">{faq.id.toString().padStart(2, "0")}</span>
@@ -37,6 +38,17 @@ const FAQ = () => {
       </div>
     </section>
   );
+};
+
+// ✅ PropTypes (هذا المطلوب من التقرير)
+FAQ.propTypes = {
+  faqsData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      question: PropTypes.string.isRequired,
+      answer: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 export default FAQ;
