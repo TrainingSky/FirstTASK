@@ -114,7 +114,7 @@ export default function HeroSection() {
   <Link to="/Work">
     <button className="hero-btn hero-btn-outline">Our Works</button>
   </Link>
-  <Link to="/contactPage">
+  <Link to="/contact">
     <button className="hero-btn hero-btn-solid">Contact Us</button>
   </Link>
 </div>

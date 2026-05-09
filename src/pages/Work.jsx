@@ -73,7 +73,11 @@ const Portfolio = () => {
                   }`}
                 >
                   {/* ✅ حماية images */}
-                  <ImageSlider images={project.images || []} />
+                <ImageSlider
+  images={(project.images || []).map((img) =>
+    typeof img === "string" ? img : img.url
+  )}
+/>
                 </div>
               </div>
 
