@@ -16,7 +16,7 @@ const limitWords = (text = "", limit = 20) => {
 
 const ServiceCard = ({ service }) => (
   <div className="service-card">
-    <div className="service-icon">{iconMap[service.icon]}</div>
+    {/* <div className="service-icon">{iconMap[service.icon]}</div> */}
     <h3 className="service-title">{service.title}</h3>
     <p className="service-desc">{limitWords(service.description, 20)}</p>
     <button className="learn-more">Learn More</button>

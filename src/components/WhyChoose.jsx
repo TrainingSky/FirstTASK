@@ -35,26 +35,38 @@ const features = [
   {
     id: 1,
     Icon: ExpertiseIcon,
-    title: 'Expertise',
-    body: 'Our team consists of highly skilled professionals who have a deep understanding of the digital landscape. We stay updated with the latest industry trends and best practices to deliver cutting-edge solutions.',
+    title: 'Data-Driven by Design',
+    body: 'Unlike traditional software companies, every solution we build is backed by analytics and measurable business outcomes.',
   },
   {
     id: 2,
     Icon: ClientIcon,
-    title: 'Client-Centric Approach',
-    body: 'We prioritize our clients and their unique needs. We listen to your ideas, challenges, and goals, and tailor our services to meet your specific requirements. Your success is our success.',
+    title: 'End-to-End Expertise',
+    body: 'From strategy and design to development, AI, analytics, cloud, and long-term support—we handle the complete journey.',
   },
   {
     id: 3,
     Icon: ResultsIcon,
-    title: 'Results-Driven Solutions',
-    body: 'Our primary focus is on delivering results. We combine creativity and technical expertise to create digital products that drive business growth, enhance user experiences, and provide a competitive advantage.',
+    title: 'Tailored Solutions',
+    body: 'We don\'t sell templates. Every project is designed specifically around your business goals and workflows.',
   },
   {
     id: 4,
     Icon: PartnerIcon,
-    title: 'Collaborative Partnership',
-    body: 'We value long-term relationships with our clients. We see ourselves as your digital partner, providing ongoing support, maintenance, and updates to ensure your digital products continue to thrive.',
+    title: 'Scalable Architecture',
+    body: 'Our software is built to grow with your company, ensuring performance today and flexibility for tomorrow.',
+  },
+  {
+    id: 5,
+    Icon: PartnerIcon,
+    title: 'Transparent Communication',
+    body: 'Regular updates, clear timelines, and collaborative project management keep you informed every step of the way.',
+  },
+  {
+    id: 6,
+    Icon: PartnerIcon,
+    title: 'Long-Term Partnership',
+    body: 'We measure our success by your continued growth, offering ongoing optimization, support, and innovation beyond launch.',
   },
 ];
 
