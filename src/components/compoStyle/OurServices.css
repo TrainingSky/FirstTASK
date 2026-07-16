@@ -1,55 +1,48 @@
-
 .services-section {
   padding: 5rem 2rem;
   background-color: #0f0f0f;
   color: #ffffff;
   text-align: center;
-    font-family: 'Fraunces', serif;
-  
+  font-family: "Fraunces", serif;
 }
 
 .services-header h2 {
   font-size: 5rem;
   margin-bottom: 0.5rem;
-    /* background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text; */
-
-
-  /* Apply gradient to background instead of color */
-  /* background: 
-    radial-gradient(ellipse 90% 55% at 50% 55%, rgba(95, 54, 221, 0.22) 0%, transparent 100%),
-    radial-gradient(ellipse 95% 25% at 50% 100%, rgba(251, 249, 255, 0.12) 0%, transparent 100%);
-  /* Clip the background to text 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;*/ 
- 
 }
 
 .services-header p {
   font-size: 1rem;
   color: #b0b0b0;
   max-width: 700px;
-  margin: 0 auto 3rem auto;
+  margin: 0 auto 3rem;
 }
 
+/* ===========================
+   GRID
+=========================== */
+
 .services-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
+
+/* ===========================
+   CARD
+=========================== */
 
 .service-card {
   background-color: #1a1a1a;
   padding: 2rem;
   border-radius: 12px;
-  flex: 1 1 300px;
-  max-width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  min-height: 320px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -61,13 +54,14 @@
 .service-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #6c63ff; 
+  color: #6c63ff;
 }
 
 .service-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  
+  text-align: center;
+  word-break: break-word;
 }
 
 .service-desc {
@@ -75,11 +69,74 @@
   color: #b0b0b0;
   margin-bottom: 1.5rem;
   text-align: center;
+  flex-grow: 1;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
+
+/* ===========================
+   HOME PAGE (SHORT VERSION)
+=========================== */
+
+.service-card:not(.detailed) .service-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===========================
+   DETAILED SERVICES PAGE
+=========================== */
+
+.service-card.detailed {
+  max-width: 100%;
+  min-height: auto;
+  align-items: flex-start;
+  text-align: left;
+  overflow: visible;
+}
+
+.service-card.detailed .service-title {
+  text-align: left;
+}
+
+.service-card.detailed .service-desc {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
+  white-space: normal;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+/* Bullet list */
+
+.service-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #b0b0b0;
+  text-align: left;
+}
+
+.service-list li {
+  margin-bottom: 0.6rem;
+  line-height: 1.7;
+}
+
+/* Hide button on detailed page */
+.service-card.detailed .learn-more {
+  display: none;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
 
 .learn-more {
   background-color: #6c63ff;
-  color: white;
+  color: #fff;
   border: none;
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
@@ -91,105 +148,37 @@
   background-color: #5750d3;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .services-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .services-header h2 {
-    font-size: 2.5rem !important;
-  }
-
-  .service-card {
-    width: 100%;
-    max-width: 100%;        /* ← fix overflow */
-    box-sizing: border-box; /* ← fix padding issues */
-  }
-
-  .services-section {
-    padding: 3rem 1rem;     /* ← less side padding on mobile */
-  }
-}
-
-
-
-.service-card {
-  background-color: #1a1a1a;
-  padding: 2rem;
-  border-radius: 12px;
-  flex: 1 1 300px;
-  max-width: 350px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between; /* ✅ pushes button to bottom */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-desc {
-  font-size: 0.95rem;
-  color: #b0b0b0;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  flex-grow: 1; /* ✅ takes up remaining space above button */
-}
-
-
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* ✅ always exactly 3 columns */
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.service-card {
-  background-color: #1a1a1a;
-  padding: 2rem;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-height: 320px;        /* ✅ consistent card height */
-  overflow: hidden;         /* ✅ stops text from bleeding out */
-}
-
-.service-title {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  word-break: break-word;   /* ✅ wraps long titles */
-  text-align: center;
-}
-
-.service-desc {
-  font-size: 0.95rem;
-  color: #b0b0b0;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  flex-grow: 1;
-  word-break: break-word;   /* ✅ wraps long descriptions */
-  overflow-wrap: break-word;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;    /* ✅ max 4 lines, keeps cards uniform */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+/* ===========================
+   RESPONSIVE
+=========================== */
 
 @media (max-width: 900px) {
-  .services-grid {
-    grid-template-columns: 1fr; /* ✅ single column on mobile */
-  }
-
-  .services-header h2 {
-    font-size: 2.5rem !important;
-  }
-
   .services-section {
     padding: 3rem 1rem;
   }
+
+  .services-header h2 {
+    font-size: 2.5rem;
+  }
+
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: auto;
+  }
+}
+
+.service-desc {
+  white-space: pre-line;
+}
+
+
+.service-long-description {
+  white-space: pre-line;
+}
+.service-long-description {
+  white-space: pre-wrap;
 }
