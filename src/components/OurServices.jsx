@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { FaPaintBrush, FaPuzzlePiece, FaTasks } from "react-icons/fa";
 import "./compoStyle/OurServices.css";
 
+
 const iconMap = {
   FaPaintBrush: <FaPaintBrush />,
   FaPuzzlePiece: <FaPuzzlePiece />,
@@ -79,6 +80,7 @@ const OurServices = ({ detailed = false }) => {
 
 
 useEffect(() => {
+   console.log("ENV:", import.meta.env.VITE_API_URL);
   const apiUrl = import.meta.env.VITE_API_URL;
 
   fetch(`${apiUrl}/services`)
